@@ -2,6 +2,13 @@
 
 App iOS học **viết chữ Nhật** mỗi ngày: một từ mới, một câu (thành ngữ / câu nói hay), luyện **thứ tự nét** trên ô viết, ôn tập SRS, và **nhật ký** (viết tiếng Anh → dịch sang tiếng Nhật → chép tay). Tên: **ShoInk** = 書 *sho* (chữ viết) + *ink* (mực). Luôn viết "ShoInk", không viết "Shoink".
 
+## Cách làm việc (quan trọng)
+- Chủ dự án **tự code tay 100%** app Swift. Claude đóng vai **mentor + reviewer**: hướng dẫn từng bước (mục tiêu, file cần tạo, API nên dùng, tiêu chí xong), trả lời câu hỏi, review code khi được nhờ.
+- **Không tự viết/sửa code Swift trong `ShoInk/`** trừ khi được yêu cầu rõ. Được phép đưa snippet ngắn minh hoạ API/khái niệm, không đưa nguyên file làm sẵn.
+- Review: đọc file thật, đối chiếu `docs/architecture/ARCHITECTURE.md` + `docs/DESIGN_SYSTEM.md`, nêu lỗi theo mức độ (bug → vi phạm kiến trúc → style), chỉ dòng cụ thể, giải thích vì sao và gợi ý hướng sửa — để người code tự sửa.
+- Hiện tại làm **frontend trước** với dữ liệu giả (mock); database (SwiftData) và backend làm sau.
+- Lộ trình & bước hiện tại: `docs/ROADMAP.md`.
+
 ## Quyết định đã chốt
 - Nền tảng: **iOS native, SwiftUI**. Xcode project `ShoInk.xcodeproj`, bundle `Daz.ShoInk`, deployment target iOS 26.2, template có sẵn Core Data (`Persistence.swift`).
 - Người dùng: **đã biết kana**, muốn học từ vựng nhanh + cách viết, phiên ~**15 phút/ngày**: Từ mới (3') → Luyện viết (5') → Chép câu (4') → Ôn tập (3').
