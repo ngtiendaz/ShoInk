@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ShoInk design system</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&amp;family=Klee+One:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E2B45}a:hover{color:#B23A30}
+</style>
+</helmet>
+<div style="width: 1440px; height: 2360px; box-sizing: border-box; background: #F5F1E8; color: #1C1C1C; font-family: 'Zen Kaku Gothic New', sans-serif; position: relative; display: flex; flex-direction: column">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none">
+    <defs>
+      <pattern id="dsShippo" width="32" height="32" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="#1E2B45" stroke-opacity="0.07" stroke-width="0.8">
+          <circle cx="0" cy="0" r="16"></circle><circle cx="32" cy="0" r="16"></circle><circle cx="0" cy="32" r="16"></circle><circle cx="32" cy="32" r="16"></circle><circle cx="16" cy="16" r="16"></circle>
+        </g>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dsShippo)"></rect>
+  </svg>
+
+  <header style="position: relative; overflow: hidden; background: #1E2B45; color: #F5F1E8; padding: 64px 80px 56px; display: flex; justify-content: space-between; align-items: flex-end">
+    <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none">
+      <defs>
+        <pattern id="dsShippoDark" width="32" height="32" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="#F5F1E8" stroke-opacity="0.07" stroke-width="0.8">
+            <circle cx="0" cy="0" r="16"></circle><circle cx="32" cy="0" r="16"></circle><circle cx="0" cy="32" r="16"></circle><circle cx="32" cy="32" r="16"></circle><circle cx="16" cy="16" r="16"></circle>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dsShippoDark)"></rect>
+    </svg>
+    <div aria-hidden="true" style="position: absolute; right: 120px; top: -80px; width: 300px; height: 300px; border-radius: 50%; background: #B23A30"></div>
+    <div style="position: relative; display: flex; align-items: center; gap: 28px">
+      <div style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #B08D57; display: flex; align-items: center; justify-content: center; box-sizing: border-box">
+        <div style="width: 106px; height: 106px; border-radius: 50%; border: 1px solid #B08D57; display: flex; align-items: center; justify-content: center; box-sizing: border-box">
+          <span style="font-family: 'Shippori Mincho', serif; font-weight: 800; font-size: 64px; line-height: 1">書</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 14px; letter-spacing: 0.3em; color: #B08D57">SHOINK · DESIGN SYSTEM</span>
+        <h1 style="margin: 0; font-size: 52px; font-weight: 700; letter-spacing: 0.01em">Foundations &amp; components</h1>
+        <span style="font-size: 16px; color: #C9CCD6">v1.0 · iOS · base unit 4 pt · all sizes in pt</span>
+      </div>
+    </div>
+    <div style="position: relative; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-size: 14px; color: #C9CCD6">
+      <span>Ai · Shu · Kin on Washi</span>
+      <span>Shippo pattern · rounded everything</span>
+    </div>
+  </header>
+
+  <div style="position: relative; padding: 56px 80px 80px; display: flex; flex-direction: column; gap: 56px">
+
+    <section style="display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid #1C1C1C; padding-bottom: 12px">
+        <span style="font-family: 'Shippori Mincho', serif; font-size: 30px; font-weight: 800">色</span>
+        <h2 style="margin: 0; font-size: 26px; font-weight: 700">Color</h2>
+        <span style="font-size: 14px; color: #6B665E">Token name = SwiftUI <code style="font-family: 'JetBrains Mono', monospace">Color.sho.&lt;name&gt;</code></span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px">
+        <sc-for list="{{colors}}" as="c" hint-placeholder-count="18">
+          <div style="display: flex; flex-direction: column; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 20px; overflow: hidden">
+            <div style="height: 96px; background: {{c.hex}}; border-bottom: 1px solid #E8E1D3"></div>
+            <div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 14px 14px">
+              <div style="display: flex; justify-content: space-between; align-items: baseline">
+                <span style="font-size: 15px; font-weight: 700">{{c.name}}</span>
+                <span style="font-family: 'Shippori Mincho', serif; font-size: 14px; color: #6B665E">{{c.jp}}</span>
+              </div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">{{c.hex}}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E2B45">.{{c.token}}</span>
+              <span style="font-size: 12px; color: #6B665E; line-height: 1.4; padding-top: 4px">{{c.use}}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #6B665E">Contrast: Sumi, Stone and Ai pass 4.5:1 on Washi and Paper. Shu passes 4.5:1 on Washi (use for small red text). Muted is for large text, disabled and decorative only. On Ai backgrounds use Washi for text, Mist for secondary, Kin for small labels.</p>
+    </section>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 56px">
+      <section style="display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid #1C1C1C; padding-bottom: 12px">
+          <span style="font-family: 'Shippori Mincho', serif; font-size: 30px; font-weight: 800">字</span>
+          <h2 style="margin: 0; font-size: 26px; font-weight: 700">Typography</h2>
+          <span style="font-size: 14px; color: #6B665E">3 families · Google Fonts · SIL OFL (bundle in app)</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+          <div style="padding: 16px; background: #1E2B45; color: #F5F1E8; border-radius: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Shippori Mincho', serif; font-size: 34px; font-weight: 800">今日</span><span style="font-size: 14px; font-weight: 700">Shippori Mincho</span><span style="font-size: 12px; color: #C9CCD6">Display · Japanese titles, phrases · 500/700/800</span></div>
+          <div style="padding: 16px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Klee One', serif; font-size: 34px; font-weight: 600">木漏れ日</span><span style="font-size: 14px; font-weight: 700">Klee One</span><span style="font-size: 12px; color: #6B665E">Model characters · stroke-true shapes · 400/600</span></div>
+          <div style="padding: 16px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 34px; font-weight: 700">Aa あ</span><span style="font-size: 14px; font-weight: 700">Zen Kaku Gothic New</span><span style="font-size: 12px; color: #6B665E">UI text, Latin + kana · 400/500/700</span></div>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px; padding: 4px 20px">
+          <sc-for list="{{type}}" as="t" hint-placeholder-count="12">
+            <div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 210px; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px solid #EDE7DB">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E2B45">.{{t.token}}</span>
+              <span style="font-family: {{t.family}}; font-size: {{t.size}}px; font-weight: {{t.weight}}; letter-spacing: {{t.track}}; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{t.sample}}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6B665E">{{t.spec}}</span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #6B665E">Furigana: Zen Kaku Gothic 10–13 pt in Stone (Kin on Ai). Overline labels are uppercase with 0.14em tracking. Support Dynamic Type by scaling UI styles; keep character pads fixed.</p>
+      </section>
+
+      <div style="display: flex; flex-direction: column; gap: 56px">
+        <section style="display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid #1C1C1C; padding-bottom: 12px">
+            <span style="font-family: 'Shippori Mincho', serif; font-size: 30px; font-weight: 800">間</span>
+            <h2 style="margin: 0; font-size: 26px; font-weight: 700">Spacing</h2>
+            <span style="font-size: 14px; color: #6B665E">4-pt scale</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px; padding: 18px 20px">
+            <sc-for list="{{space}}" as="s" hint-placeholder-count="9">
+              <div style="display: grid; grid-template-columns: 90px 44px minmax(0, 1fr); gap: 12px; align-items: center">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E2B45">.{{s.token}}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px">{{s.v}}</span>
+                <div style="display: flex; align-items: center; gap: 10px"><span style="height: 12px; width: {{s.v}}px; background: #B23A30; border-radius: 3px; flex-shrink: 0"></span><span style="font-size: 12px; color: #6B665E">{{s.use}}</span></div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <section style="display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid #1C1C1C; padding-bottom: 12px">
+            <span style="font-family: 'Shippori Mincho', serif; font-size: 30px; font-weight: 800">丸</span>
+            <h2 style="margin: 0; font-size: 26px; font-weight: 700">Radius</h2>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+            <sc-for list="{{radii}}" as="r" hint-placeholder-count="6">
+              <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
+                <div style="width: 100%; height: 72px; background: #FFFDF8; border: 1.5px solid #1E2B45; border-radius: {{r.v}}px; box-sizing: border-box"></div>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E2B45">.{{r.token}} · {{r.label}}</span>
+                <span style="font-size: 12px; color: #6B665E; line-height: 1.35">{{r.use}}</span>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 56px">
+      <section style="display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid #1C1C1C; padding-bottom: 12px">
+          <span style="font-family: 'Shippori Mincho', serif; font-size: 30px; font-weight: 800">影</span>
+          <h2 style="margin: 0; font-size: 26px; font-weight: 700">Elevation, pattern &amp; icons</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 10px"><div style="height: 90px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px"></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E2B45">.flat</span><span style="font-size: 12px; color: #6B665E">Border Line only · rows, small cards</span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div style="height: 90px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px; box-shadow: 0 10px 28px rgba(30,43,69,0.07)"></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E2B45">.raised</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B665E">Ai 7% · y10 · blur28</span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div style="height: 90px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px; box-shadow: 0 14px 34px rgba(30,43,69,0.09)"></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E2B45">.floating</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B665E">Ai 9% · y14 · blur34</span></div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <svg viewBox="0 0 160 96" role="img" aria-label="Shippo pattern tile, enlarged" style="width: 100%; height: 96px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 18px">
+              <g fill="none" stroke="#1E2B45" stroke-opacity="0.45" stroke-width="1">
+                <circle cx="48" cy="16" r="32"></circle><circle cx="112" cy="16" r="32"></circle><circle cx="48" cy="80" r="32"></circle><circle cx="112" cy="80" r="32"></circle><circle cx="80" cy="48" r="32"></circle>
+              </g>
+            </svg>
+            <span style="font-size: 13px; font-weight: 700">Shippo 七宝 pattern</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B665E; line-height: 1.5">tile 32 · 5 circles r16 · stroke 0.8<br>Ai @7% on light · Washi @7% on Ai</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <div style="height: 96px; background: #1E2B45; border-radius: 18px; position: relative; overflow: hidden"><div style="position: absolute; right: -24px; top: -24px; width: 100px; height: 100px; border-radius: 50%; background: #B23A30"></div></div>
+            <span style="font-size: 13px; font-weight: 700">Rising sun motif</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B665E; line-height: 1.5">Shu circle bleeding off a corner<br>on Ai · Sun tint on Washi</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 18px; padding: 16px 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 20px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16zM14 6l3 3"></path></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"></path></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9zM16.5 8.5a5 5 0 0 1 0 7"></path></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14L4 9l5-5M4 9h10a6 6 0 0 1 0 12h-3"></path></svg>
+          <span style="font-size: 12px; color: #6B665E; line-height: 1.5">Line icons · 20–24 pt · stroke 1.7–1.8 · round caps.<br>In code: SF Symbols, weight .regular</span>
+        </div>
+      </section>
+
+      <section style="display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid #1C1C1C; padding-bottom: 12px">
+          <span style="font-family: 'Shippori Mincho', serif; font-size: 30px; font-weight: 800">部</span>
+          <h2 style="margin: 0; font-size: 26px; font-weight: 700">Components</h2>
+          <span style="font-size: 14px; color: #6B665E">min touch target 44 pt</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px">
+            <span style="font-size: 11px; color: #6B665E; letter-spacing: 0.14em">BUTTONS · capsule</span>
+            <button style="height: 56px; border: none; border-radius: 28px; background: #1C1C1C; color: #F5F1E8; font-family: inherit; font-size: 16px; font-weight: 500; box-shadow: 0 10px 24px rgba(28,28,28,0.18)">Primary · Sumi · h56</button>
+            <button style="height: 56px; border: none; border-radius: 28px; background: #B23A30; color: #FFFDF8; font-family: inherit; font-size: 16px; font-weight: 700; box-shadow: 0 10px 24px rgba(178,58,48,0.3)">Accent · Shu · h56</button>
+            <button style="height: 52px; border: 1px solid #1C1C1C; border-radius: 26px; background: none; color: #1C1C1C; font-family: inherit; font-size: 15px">Secondary · outline · h52</button>
+            <div style="display: flex; align-items: center; gap: 10px">
+              <button aria-label="Icon button example" style="width: 44px; height: 44px; border-radius: 22px; border: 1px solid #E8E1D3; background: #FFFDF8; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+              <button aria-label="Next button example" style="width: 64px; height: 64px; border-radius: 32px; border: none; background: #B23A30; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(178,58,48,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFDF8" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+              <span style="font-size: 12px; color: #6B665E; line-height: 1.4">Icon 44 · Next 64</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 14px; padding: 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px">
+            <span style="font-size: 11px; color: #6B665E; letter-spacing: 0.14em">CHIPS · SEGMENTED · SEAL</span>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center">
+              <span style="font-size: 11px; font-weight: 700; color: #1E2B45; background: #E7EAF1; padding: 4px 10px; border-radius: 999px">N2</span>
+              <span style="height: 28px; padding: 0 12px; border-radius: 14px; background: #1E2B45; color: #F5F1E8; font-size: 12px; display: flex; align-items: center">Stroke 3 / 4</span>
+              <span style="height: 28px; padding: 0 12px; border-radius: 14px; background: #F3E3DF; color: #8E2C24; font-size: 12px; font-weight: 500; display: flex; align-items: center">✓ Nice</span>
+              <span style="height: 34px; padding: 0 14px; border-radius: 17px; border: 1px solid #DDD5C6; font-size: 13px; display: flex; align-items: center">Prompt chip</span>
+            </div>
+            <div style="display: flex; padding: 3px; background: #EFE9DD; border-radius: 18px; align-self: flex-start">
+              <span style="height: 30px; padding: 0 14px; border-radius: 15px; background: #FFFDF8; font-size: 12px; font-weight: 700; display: flex; align-items: center; box-shadow: 0 1px 3px rgba(28,28,28,0.12)">Trace</span>
+              <span style="height: 30px; padding: 0 14px; font-size: 12px; color: #4F4A43; display: flex; align-items: center">Guided</span>
+              <span style="height: 30px; padding: 0 14px; font-size: 12px; color: #4F4A43; display: flex; align-items: center">Free</span>
+            </div>
+            <div style="display: flex; padding: 3px; background: #EFE9DD; border-radius: 16px; align-self: flex-start">
+              <span style="height: 30px; padding: 0 14px; font-size: 12px; color: #4F4A43; display: flex; align-items: center">Gentle</span>
+              <span style="height: 30px; padding: 0 14px; border-radius: 13px; background: #1E2B45; color: #F5F1E8; font-size: 12px; font-weight: 700; display: flex; align-items: center">Standard</span>
+              <span style="height: 30px; padding: 0 14px; font-size: 12px; color: #4F4A43; display: flex; align-items: center">Strict</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span aria-hidden="true" style="width: 40px; height: 40px; border: 1.5px solid #B23A30; color: #B23A30; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-family: 'Shippori Mincho', serif; font-size: 18px; font-weight: 800; transform: rotate(-8deg)">完</span>
+              <span style="font-size: 12px; color: #6B665E; line-height: 1.4">Hanko seal · Shu border 1.5 · radius 22% · rotate −8°</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px">
+            <span style="font-size: 11px; color: #6B665E; letter-spacing: 0.14em">WRITING PAD</span>
+            <div style="display: flex; gap: 14px; align-items: center">
+              <svg viewBox="0 0 100 100" role="img" aria-label="Writing pad grid example" style="width: 120px; height: 120px; flex-shrink: 0; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 28px; box-shadow: 0 14px 34px rgba(30,43,69,0.09)">
+                <path d="M50 4V96M4 50H96" stroke="#E8E1D3" stroke-width="0.8" stroke-dasharray="2 2"></path>
+                <path d="M18 38 L82 36M50 12 L50 90M47 42 Q36 62 16 76M53 42 Q66 62 86 74" stroke="#EDE7DB" stroke-width="6" stroke-linecap="round" fill="none"></path>
+                <path d="M18 38 L82 36M50 12 L50 90" stroke="#1C1C1C" stroke-width="5" stroke-linecap="round" fill="none"></path>
+                <circle cx="47" cy="42" r="3.5" fill="#B23A30"></circle>
+              </svg>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B665E; line-height: 1.6">田字格 guides: Line, dash 2/2<br>ghost strokes: Divider<br>ink: Sumi, width ≈ 4.8% of pad<br>next-stroke hint: Shu dot + arrow<br>radius 28 · .floating</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 22px">
+            <span style="font-size: 11px; color: #6B665E; letter-spacing: 0.14em">TAB BAR · floating</span>
+            <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 6px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 30px; box-shadow: 0 8px 24px rgba(30,43,69,0.08)">
+              <span style="display: flex; flex-direction: column; align-items: center; font-size: 11px; padding: 9px 0; border-radius: 24px; background: #1E2B45; color: #F5F1E8">Today</span>
+              <span style="display: flex; flex-direction: column; align-items: center; font-size: 11px; padding: 9px 0; color: #6B665E">Review</span>
+              <span style="display: flex; flex-direction: column; align-items: center; font-size: 11px; padding: 9px 0; color: #6B665E">Journal</span>
+              <span style="display: flex; flex-direction: column; align-items: center; font-size: 11px; padding: 9px 0; color: #6B665E">Notebook</span>
+              <span style="display: flex; flex-direction: column; align-items: center; font-size: 11px; padding: 9px 0; color: #6B665E">Me</span>
+            </div>
+            <span style="font-size: 12px; color: #6B665E; line-height: 1.5">Inset 20 from edges, 28 from bottom · radius 30 · active item Ai capsule r24</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section style="display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid #1C1C1C; padding-bottom: 12px">
+        <span style="font-family: 'Shippori Mincho', serif; font-size: 30px; font-weight: 800">型</span>
+        <h2 style="margin: 0; font-size: 26px; font-weight: 700">Screen layout</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+        <div style="padding: 18px 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700">Screen margin</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">20 (.xl)</span><span style="font-size: 12px; color: #6B665E">Cards and bars sit 20 from the edges</span></div>
+        <div style="padding: 18px 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700">Card padding</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">20 h · 18–20 v</span><span style="font-size: 12px; color: #6B665E">Gap between stacked cards 12</span></div>
+        <div style="padding: 18px 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700">Top bar</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">44 icon buttons · 16 inset</span><span style="font-size: 12px; color: #6B665E">Center: overline label or screen name</span></div>
+        <div style="padding: 18px 20px; background: #FFFDF8; border: 1px solid #E8E1D3; border-radius: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700">Bottom action</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">36 from bottom edge</span><span style="font-size: 12px; color: #6B665E">One primary capsule, thumb reach</span></div>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2360}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const colors = [
+      { name: 'Washi', jp: '和紙', hex: '#F5F1E8', token: 'washi', use: 'App background' },
+      { name: 'Paper', jp: '紙', hex: '#FFFDF8', token: 'paper', use: 'Cards, pads, bars' },
+      { name: 'Sumi', jp: '墨', hex: '#1C1C1C', token: 'sumi', use: 'Text, ink strokes, primary button' },
+      { name: 'Ai', jp: '藍', hex: '#1E2B45', token: 'ai', use: 'Brand · headers, selected states' },
+      { name: 'Shu', jp: '朱', hex: '#B23A30', token: 'shu', use: 'Accent · seals, Next, stroke hints' },
+      { name: 'Kin', jp: '金', hex: '#B08D57', token: 'kin', use: 'Labels and furigana on Ai' },
+      { name: 'Stone', jp: '石', hex: '#6B665E', token: 'stone', use: 'Secondary text' },
+      { name: 'Muted', jp: '灰', hex: '#8C8579', token: 'muted', use: 'Disabled, large hint text only' },
+      { name: 'Line', jp: '線', hex: '#E8E1D3', token: 'line', use: 'Card borders, grid guides' },
+      { name: 'Divider', jp: '罫', hex: '#EDE7DB', token: 'divider', use: 'Row dividers, ghost strokes' },
+      { name: 'Track', jp: '溝', hex: '#EFE9DD', token: 'track', use: 'Segmented control background' },
+      { name: 'Mist', jp: '霞', hex: '#C9CCD6', token: 'mist', use: 'Secondary text on Ai' },
+      { name: 'Ai tint', jp: '藍白', hex: '#E7EAF1', token: 'aiTint', use: 'Level chips, info notes' },
+      { name: 'Shu tint', jp: '桜', hex: '#F3E3DF', token: 'shuTint', use: 'Success chip, icon tiles' },
+      { name: 'Sun tint', jp: '日', hex: '#EFD9D3', token: 'sunTint', use: 'Sun motif on light screens' },
+      { name: 'Shu deep', jp: '臙脂', hex: '#8E2C24', token: 'shuDeep', use: 'Red text on tints, destructive' },
+      { name: 'Shu light', jp: '紅', hex: '#D9604E', token: 'shuLight', use: 'Seal on Ai backgrounds' },
+      { name: 'Ink soft', jp: '淡墨', hex: '#4F4A43', token: 'inkSoft', use: 'Unselected segment labels' }
+    ];
+    const mincho = "'Shippori Mincho', serif";
+    const klee = "'Klee One', serif";
+    const gothic = "'Zen Kaku Gothic New', sans-serif";
+    const type = [
+      { token: 'displayJP', family: mincho, size: 42, weight: 800, track: '0.06em', sample: '今日 手帳 日記', spec: 'Mincho 800 · 42/48 · +6%' },
+      { token: 'phraseJP', family: mincho, size: 26, weight: 700, track: '0.12em', sample: '七転び八起き', spec: 'Mincho 700 · 26/32 · +12%' },
+      { token: 'sentenceJP', family: mincho, size: 18, weight: 500, track: '0', sample: '公園の木漏れ日が気持ちいい。', spec: 'Mincho 500 · 17–21/1.6–2.0' },
+      { token: 'kanjiHero', family: klee, size: 62, weight: 600, track: '0', sample: '木漏れ日', spec: 'Klee 600 · 50–62/1.1' },
+      { token: 'kanjiTile', family: klee, size: 28, weight: 600, track: '0', sample: '木 漏 れ 日', spec: 'Klee 600 · 22–28' },
+      { token: 'title', family: gothic, size: 28, weight: 700, track: '0', sample: 'Session complete', spec: 'Gothic 700 · 28/34' },
+      { token: 'headline', family: gothic, size: 22, weight: 700, track: '0', sample: 'tree', spec: 'Gothic 700 · 22/28' },
+      { token: 'bodyLarge', family: gothic, size: 18, weight: 500, track: '0', sample: 'Sunlight filtering through the leaves', spec: 'Gothic 500 · 18/26' },
+      { token: 'body', family: gothic, size: 15, weight: 400, track: '0', sample: 'Fall seven times, stand up eight.', spec: 'Gothic 400–500 · 15/22' },
+      { token: 'callout', family: gothic, size: 13, weight: 400, track: '0', sample: 'Start at the red dot and follow the arrow.', spec: 'Gothic 400 · 13/19' },
+      { token: 'caption', family: gothic, size: 12, weight: 400, track: '0', sample: '4 characters · 24 strokes', spec: 'Gothic 400 · 12/16' },
+      { token: 'overline', family: gothic, size: 11, weight: 500, track: '0.14em', sample: 'WORD OF THE DAY', spec: 'Gothic 500 · 11 · +14% · CAPS' }
+    ];
+    const space = [
+      { token: 'xxs', v: 4, use: 'icon ↔ label' },
+      { token: 'xs', v: 8, use: 'chip gaps, tile gaps' },
+      { token: 'sm', v: 12, use: 'between cards' },
+      { token: 'md', v: 16, use: 'section inner gap, top-bar inset' },
+      { token: 'lg', v: 18, use: 'card vertical padding' },
+      { token: 'xl', v: 20, use: 'screen margin, card padding' },
+      { token: 'xxl', v: 24, use: 'header padding' },
+      { token: 'xxxl', v: 36, use: 'bottom action inset' },
+      { token: 'top', v: 54, use: 'content top (below status bar)' }
+    ];
+    const radii = [
+      { token: 'chip', v: 999, label: 'capsule', use: 'Chips, all buttons (h/2)' },
+      { token: 'sm', v: 12, label: '12', use: 'Stroke tiles, small icon tiles' },
+      { token: 'md', v: 18, label: '18', use: 'Rows, stat cards, info notes' },
+      { token: 'lg', v: 22, label: '22', use: 'Cards (default)' },
+      { token: 'xl', v: 26, label: '26', use: 'Hero cards, text input' },
+      { token: 'pad', v: 28, label: '28', use: 'Writing pad, flashcard' }
+    ];
+    return { colors, type, space, radii };
+  }
+}
+</script>
+</body>
+</html>

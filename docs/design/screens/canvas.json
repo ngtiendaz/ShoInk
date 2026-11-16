@@ -1,0 +1,161 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "DesignSystem.dc.html": {
+      "h": 2360,
+      "title": "Design system",
+      "w": 1440,
+      "x": 0,
+      "y": 2600
+    },
+    "Done.dc.html": {
+      "h": 844,
+      "title": "7 · Session complete",
+      "w": 390,
+      "x": 470,
+      "y": 1300
+    },
+    "Journal.dc.html": {
+      "h": 844,
+      "title": "8 · Journal",
+      "w": 390,
+      "x": 940,
+      "y": 1300
+    },
+    "JournalEntry.dc.html": {
+      "h": 844,
+      "title": "10 · Entry in Japanese",
+      "w": 390,
+      "x": 1880,
+      "y": 1300
+    },
+    "JournalNew.dc.html": {
+      "h": 844,
+      "title": "9 · New entry (English)",
+      "w": 390,
+      "x": 1410,
+      "y": 1300
+    },
+    "Login.dc.html": {
+      "h": 844,
+      "title": "0 · Sign in",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "Logo.dc.html": {
+      "h": 1180,
+      "title": "Logo",
+      "w": 1220,
+      "x": 1520,
+      "y": 2600
+    },
+    "Main.dc.html": {
+      "h": 844,
+      "title": "1 · Today",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "Me.dc.html": {
+      "h": 844,
+      "title": "11 · Me & settings",
+      "w": 390,
+      "x": 2350,
+      "y": 1300
+    },
+    "Notebook.dc.html": {
+      "h": 844,
+      "title": "5 · Notebook",
+      "w": 390,
+      "x": 2350,
+      "y": 0
+    },
+    "Phrase.dc.html": {
+      "h": 844,
+      "title": "4 · Copy the phrase",
+      "w": 390,
+      "x": 1880,
+      "y": 0
+    },
+    "Review.dc.html": {
+      "h": 844,
+      "title": "6 · Review",
+      "w": 390,
+      "x": 0,
+      "y": 1300
+    },
+    "Word.dc.html": {
+      "h": 844,
+      "title": "2 · Word of the day",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "Write.dc.html": {
+      "h": 844,
+      "title": "3 · Writing practice",
+      "w": 390,
+      "x": 1410,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-11-15T09:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "title",
+    "row2",
+    "row3"
+  ],
+  "notes": {
+    "row2": {
+      "kind": "title1",
+      "maxW": 2740,
+      "text": "Review · Journal · Settings",
+      "w": 240,
+      "x": 0,
+      "y": 1000
+    },
+    "row3": {
+      "kind": "title1",
+      "maxW": 2740,
+      "text": "Design system & logo",
+      "w": 240,
+      "x": 0,
+      "y": 2300
+    },
+    "title": {
+      "kind": "title1",
+      "maxW": 2740,
+      "text": "ShoInk 書 — main screens (iOS)",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Login.dc.html",
+    "Main.dc.html",
+    "Word.dc.html",
+    "Write.dc.html",
+    "Phrase.dc.html",
+    "Notebook.dc.html",
+    "Review.dc.html",
+    "Done.dc.html",
+    "Journal.dc.html",
+    "JournalNew.dc.html",
+    "JournalEntry.dc.html",
+    "Me.dc.html",
+    "DesignSystem.dc.html",
+    "Logo.dc.html"
+  ],
+  "pages": [],
+  "title": "ShoInk — Japanese Writing App"
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Journal translation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&amp;family=Klee+One:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1C1C1C;text-decoration:none}a:hover{color:#B23A30}
+rt{font-family:'Zen Kaku Gothic New',sans-serif;font-size:10px;color:#B08D57;letter-spacing:0.02em}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F5F1E8; color: #1C1C1C; font-family: 'Zen Kaku Gothic New', sans-serif; display: flex; flex-direction: column; position: relative; overflow: hidden">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none">
+    <defs>
+      <pattern id="shippoLight" width="32" height="32" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="#1E2B45" stroke-opacity="0.07" stroke-width="0.8">
+          <circle cx="0" cy="0" r="16"></circle><circle cx="32" cy="0" r="16"></circle><circle cx="0" cy="32" r="16"></circle><circle cx="32" cy="32" r="16"></circle><circle cx="16" cy="16" r="16"></circle>
+        </g>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#shippoLight)"></rect>
+  </svg>
+
+  <div style="position: relative; padding: 54px 16px 0; display: flex; justify-content: space-between; align-items: center">
+    <a href="JournalNew.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 22px; background: #FFFDF8; border: 1px solid #E8E1D3; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <span style="font-size: 12px; color: #6B665E; letter-spacing: 0.14em">SUN, NOV 15</span>
+    <button aria-label="Edit English text" style="width: 44px; height: 44px; border-radius: 22px; background: #FFFDF8; border: 1px solid #E8E1D3; color: #1C1C1C; display: flex; align-items: center; justify-content: center; padding: 0">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16zM14 6l3 3"></path></svg>
+    </button>
+  </div>
+
+  <div style="position: relative; padding: 14px 20px 0; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+    <div style="position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px; padding: 18px 20px 16px; background: #1E2B45; color: #F5F1E8; border-radius: 26px">
+      <div aria-hidden="true" style="position: absolute; right: -36px; top: -36px; width: 120px; height: 120px; border-radius: 50%; background: #B23A30"></div>
+      <div style="position: relative; display: flex; justify-content: space-between; align-items: center">
+        <span style="font-size: 11px; color: #B08D57; letter-spacing: 0.14em">IN JAPANESE</span>
+        <button style="height: 32px; padding: 0 12px 0 9px; border-radius: 16px; border: none; background: #F5F1E8; color: #1E2B45; font-family: inherit; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 5px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"></path></svg>Listen</button>
+      </div>
+      <p style="position: relative; margin: 0; font-family: 'Shippori Mincho', serif; font-size: 21px; line-height: 2.05; font-weight: 500"><ruby>今朝<rt>けさ</rt></ruby>、<ruby>駅<rt>えき</rt></ruby>まで<ruby>歩<rt>ある</rt></ruby>きました。<ruby>葉<rt>は</rt></ruby>が<ruby>赤<rt>あか</rt></ruby>くなっていて、<ruby>空気<rt>くうき</rt></ruby>が<ruby>冷<rt>つめ</rt></ruby>たかったです。</p>
+      <p style="position: relative; margin: 0; padding-top: 10px; border-top: 1px solid rgba(245,241,232,0.16); font-size: 13px; color: #C9CCD6; line-height: 1.5">This morning I walked to the station. The leaves were turning red, and the air was cold.</p>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 4px 4px 0">
+      <span style="font-size: 11px; color: #6B665E; letter-spacing: 0.14em">WORDS IN THIS ENTRY</span>
+      <span style="font-size: 12px; color: #6B665E">3 selected</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{words}}" as="w" hint-placeholder-count="6">
+        <sc-if value="{{w.on}}" hint-placeholder-val="{{ false }}">
+          <button aria-pressed="true" style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 18px; border: 1.5px solid #1E2B45; background: #FFFDF8; font-family: inherit; text-align: left; color: #1C1C1C">
+            <span style="font-family: 'Klee One', serif; font-size: 22px; font-weight: 600; min-width: 44px">{{w.ja}}</span>
+            <span style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 11px; color: #6B665E">{{w.kana}}</span><span style="font-size: 13px">{{w.en}}</span></span>
+            <span style="width: 20px; height: 20px; border-radius: 10px; background: #1E2B45; color: #F5F1E8; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span>
+          </button>
+        </sc-if>
+        <sc-if value="{{w.off}}" hint-placeholder-val="{{ true }}">
+          <button aria-pressed="false" style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 18px; border: 1px solid #E8E1D3; background: #FFFDF8; font-family: inherit; text-align: left; color: #1C1C1C">
+            <span style="font-family: 'Klee One', serif; font-size: 22px; font-weight: 600; min-width: 44px">{{w.ja}}</span>
+            <span style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 11px; color: #6B665E">{{w.kana}}</span><span style="font-size: 13px">{{w.en}}</span></span>
+            <span style="width: 20px; height: 20px; border-radius: 10px; border: 1.5px solid #CFC6B5; box-sizing: border-box"></span>
+          </button>
+        </sc-if>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="position: relative; padding: 14px 20px 36px; display: flex; gap: 10px">
+    <button style="flex-grow: 1; height: 56px; border-radius: 28px; border: 1px solid #1C1C1C; background: #FFFDF8; color: #1C1C1C; font-family: inherit; font-size: 14px; font-weight: 500">Add 3 to review</button>
+    <a href="Phrase.dc.html" style="flex-grow: 1.4; display: flex; justify-content: center; align-items: center; gap: 8px; height: 56px; background: #1C1C1C; color: #F5F1E8; border-radius: 28px; font-size: 15px; font-weight: 700; box-shadow: 0 10px 24px rgba(28,28,28,0.18)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16zM14 6l3 3"></path></svg>Copy by hand</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const raw = [
+      { ja: '今朝', kana: 'けさ', en: 'this morning', on: true },
+      { ja: '駅', kana: 'えき', en: 'station', on: false },
+      { ja: '歩く', kana: 'あるく', en: 'to walk', on: false },
+      { ja: '葉', kana: 'は', en: 'leaf', on: true },
+      { ja: '空気', kana: 'くうき', en: 'air', on: false },
+      { ja: '冷たい', kana: 'つめたい', en: 'cold', on: true }
+    ];
+    const words = raw.map((w) => ({ ...w, off: !w.on }));
+    return { words };
+  }
+}
+</script>
+</body>
+</html>
