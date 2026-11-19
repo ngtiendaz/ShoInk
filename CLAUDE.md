@@ -7,7 +7,7 @@ App iOS học **viết chữ Nhật** mỗi ngày: một từ mới, một câu 
 - **Không tự viết/sửa code Swift trong `ShoInk/`** trừ khi được yêu cầu rõ. Được phép đưa snippet ngắn minh hoạ API/khái niệm, không đưa nguyên file làm sẵn.
 - Review: đọc file thật, đối chiếu `docs/architecture/ARCHITECTURE.md` + `docs/DESIGN_SYSTEM.md`, nêu lỗi theo mức độ (bug → vi phạm kiến trúc → style), chỉ dòng cụ thể, giải thích vì sao và gợi ý hướng sửa — để người code tự sửa.
 - Hiện tại làm **frontend trước** với dữ liệu giả (mock); database (SwiftData) và backend làm sau.
-- Lộ trình & bước hiện tại: `docs/ROADMAP.md`.
+- Lộ trình & checklist: `docs/ROADMAP.md` — 4 phase (1 Frontend · 2 Data & Logic · 3 Backend · 4 Phát hành), task có mã (vd. `1.B2`); dòng "👉 Task tiếp theo" ở đầu file là việc hiện tại. Khi một task được review xong, tick `[x]` và cập nhật dòng 👉.
 
 ## Quyết định đã chốt
 - Nền tảng: **iOS native, SwiftUI**. Xcode project `ShoInk.xcodeproj`, bundle `Daz.ShoInk`, deployment target iOS 26.2, template có sẵn Core Data (`Persistence.swift`).
